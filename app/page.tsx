@@ -1,3 +1,5 @@
+import PostCard from "./components/PostCard"
+
 export default function Home() {
   const posts = [
     { id: 1, title: "Meu primeiro post", excerpt: "Aprendendo Next.js na prática"},
@@ -13,10 +15,7 @@ export default function Home() {
 
       <div className="flex flex-col gap-6">
         {posts.map((post) => (
-          <div key={post.id} className="border-b pb-4">
-            <h2 className="text-xl font-semibold">{post.title}</h2>
-            <p className="text-zinc-600">{post.excerpt}</p>
-          </div>
+          <PostCard key={post.id} post={post} /> 
         ))}
       </div>
     </main>
