@@ -21,7 +21,7 @@ export default function Header() {
             </Link>
           </li>
           <li>
-            <Link href="/" className="text-zinc-700 hover:text-black">
+            <Link href="about" className="text-zinc-700 hover:text-black">
               Sobre
             </Link>
           </li>
@@ -40,12 +40,12 @@ export default function Header() {
         {isOpen && (
           <ul className="absolute top-20 left-0 right-0 bg-white border-b border-zinc-200 flex flex-col p-4 gap-4 md:hidden">
             <li>
-              <Link href="/" className="text-zinc-700 hover:text-black">
+              <Link href="/" onClick={() => setIsOpen(false)} className="text-zinc-700 hover:text-black">
                 Home
               </Link>
             </li>
             <li>
-              <Link href="/" className="text-zinc-700 hover:text-black">
+              <Link href="about" onClick={() => setIsOpen(false)} className="text-zinc-700 hover:text-black">
                 Sobre
               </Link>
             </li>
