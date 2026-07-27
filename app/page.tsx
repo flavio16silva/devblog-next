@@ -1,12 +1,8 @@
 import PostCard from "./components/PostCard"
+import { getAllPosts } from "@/lib/posts"
 
 export default function Home() {
-  const posts = [
-    { id: 1, title: "Meu primeiro post", excerpt: "Aprendendo Next.js na prática"},
-    { id: 2, title: "Server Components", excerpt: "Entendendo a diferença de Client Components."},
-    { id: 3, title: "Deploy na Vercel", excerpt: "Publicando meu primeiro projeto."},
-     
-  ]
+  const posts = getAllPosts()
 
   return (
     <main className="max-w-2xl mx-auto py-16 px-4">
@@ -15,7 +11,7 @@ export default function Home() {
 
       <div className="flex flex-col gap-6">
         {posts.map((post) => (
-          <PostCard key={post.id} post={post} /> 
+          <PostCard key={post.slug} post={post} /> 
         ))}
       </div>
     </main>
