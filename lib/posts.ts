@@ -35,6 +35,6 @@ export function getAllPosts(): Post[] {
   return posts
 }
 
-export function getPostsBySlug(slug: string): Post | undefined {
+export function getPostBySlug(slug: string): Post | undefined {
   return posts.find((post) => post.slug === slug)
 }
