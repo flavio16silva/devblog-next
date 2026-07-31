@@ -1,8 +1,4 @@
-type Post = {
-  // id: number;
-  title: string;
-  excerpt: string
-}
+import type { Post } from "@/lib/posts"
 
 export default function PostCard({ post }: { post: Post}) {
   return (
