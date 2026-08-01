@@ -35,6 +35,10 @@ export function getAllPosts(): Post[] {
   return posts
 }
 
-export function getPostBySlug(slug: string): Post | undefined {
+function findPostSync(slug: string): Post | undefined {
   return posts.find((post) => post.slug === slug)
+}
+export async function getPostBySlug(slug: string): Promise<Post | undefined> {
+  await new Promise((resolve) => setTimeout(resolve, 1500))
+  return findPostSync(slug)
 }

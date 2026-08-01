@@ -12,7 +12,7 @@ export async function generateMetadata({
   params: Promise<Params>
 }): Promise<Metadata> {
   const { slug } = await params;
-  const post = getPostBySlug(slug)
+  const post = await getPostBySlug(slug)
 
   if (!post) {
     return {
@@ -33,7 +33,7 @@ export default async function PostPage({
   params: Promise<Params>
 }) {
   const { slug } = await params
-  const post = getPostBySlug(slug)
+  const post = await getPostBySlug(slug)
 
   if (!post) {
     notFound()
